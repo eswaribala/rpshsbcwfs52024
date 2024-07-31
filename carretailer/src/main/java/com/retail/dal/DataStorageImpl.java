@@ -62,7 +62,7 @@ public class DataStorageImpl implements DataStorage{
         return cars;
     }
 
-    @Override
+    /*@Override
     public FeedbackReport[] getAllFeedback() {
 
         for(CustomerFeedback customerFeedback:customerFeedbacks){
@@ -115,5 +115,36 @@ public class DataStorageImpl implements DataStorage{
 
 
        return feedbackReports;
+    }*/
+
+
+    @Override
+    public FeedbackReport[] getAllFeedback() {
+        Car[] cars=this.getAllCars();
+        int data[][]=new int[][] {
+            { 0, 0}, {0, 0}, {0, 0}};
+
+        for(CustomerFeedback customerFeedback:customerFeedbacks){
+             for(int i=0;i<cars.length;i++){
+                 if(customerFeedback.getModelName().equals(cars[i].getModelName())){
+                     //accumulate the feedback
+                     data[i][0]+=(customerFeedback.getSeatComfortRating()+customerFeedback.getDrivingComfortRating())/2;
+                     //increment the count
+                     data[i][1]++;
+                 }
+             }
+        }
+
+        for (int i = 0; i < ModelName.values().length; i++) {
+                try {
+                    feedbackReports[i] = new FeedbackReport(cars[i].getModelName(), cars[i].getSeatingCapacity(), data[i][0]/(data[i][1]));
+                }catch(ArithmeticException e){
+
+                    throw new AverageComputationException("Average Computation Failed due to o cars ");
+                }
+
+
+        }
+        return feedbackReports;
     }
 }
