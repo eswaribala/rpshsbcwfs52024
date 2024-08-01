@@ -17,9 +17,9 @@ public class DataStorageImpl implements DataStorage{
     private static int carPos=0;
     private static int feedbackPos=0;
 
-    private static int accToyato=0,tCount=0;
-    private static int accHyundai=0,hCount=0;
-    private static int accFord=0,fCount=0;
+   // private static int accToyato=0,tCount=0;
+    //private static int accHyundai=0,hCount=0;
+    //private static int accFord=0,fCount=0;
     public  DataStorageImpl(int noOfCars, int noOfCustomers){
         cars=new Car[noOfCars];
         customerFeedbacks=new CustomerFeedback[noOfCustomers];
@@ -121,8 +121,12 @@ public class DataStorageImpl implements DataStorage{
     @Override
     public FeedbackReport[] getAllFeedback() {
         Car[] cars=this.getAllCars();
-        int data[][]=new int[][] {
-            { 0, 0}, {0, 0}, {0, 0}};
+        int data[][]=new int[ModelName.values().length][2];
+        for(int row=0;row<data.length;row++){
+            for(int col=0;col<data[row].length;col++){
+                data[row][col]=0;
+            }
+        }
 
         for(CustomerFeedback customerFeedback:customerFeedbacks){
              for(int i=0;i<cars.length;i++){
@@ -137,7 +141,8 @@ public class DataStorageImpl implements DataStorage{
 
         for (int i = 0; i < ModelName.values().length; i++) {
                 try {
-                    feedbackReports[i] = new FeedbackReport(cars[i].getModelName(), cars[i].getSeatingCapacity(), data[i][0]/(data[i][1]));
+                    feedbackReports[i] = new FeedbackReport(cars[i].getModelName(), cars[i].getSeatingCapacity(),
+                            data[i][0]/(data[i][1]));
                 }catch(ArithmeticException e){
 
                     throw new AverageComputationException("Average Computation Failed due to o cars ");
