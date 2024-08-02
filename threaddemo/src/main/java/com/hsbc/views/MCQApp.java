@@ -3,27 +3,24 @@ package com.hsbc.views;
 import com.hsbc.dal.MCQDAL;
 import com.hsbc.dal.MCQImpl;
 import com.hsbc.models.Answer;
+import com.hsbc.models.MCQThread;
 import com.hsbc.models.Question;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class MCQApp {
-
     public static void main(String[] args){
-        MCQDAL mcqdal=new MCQImpl();
-        Answer[] answers=null;
-        try {
-            for(Question question: mcqdal.getQuestions()){
-                System.out.print(question.getQuestionNo()+"."+question.getQuestionText());
-                System.out.println("\n");
-               answers=question.getAnswers();
-              for(int i=0;i<4;i++){
-                  System.out.println(answers[i].getAnswerId()+1+"."+answers[i].getAnswerText());
-              }
-              System.out.println("=========================================");
+        MCQThread mcqThread=new MCQThread();
+        mcqThread.start();
+        int answer=0;
+        try(Scanner scanner=new Scanner(System.in)){
+            System.out.println("Enter your option....");
+            answer=scanner.nextInt();
+            if((answer>0)&&(answer<=4)){
+                mcqThread.interrupt();
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
+
     }
 }
