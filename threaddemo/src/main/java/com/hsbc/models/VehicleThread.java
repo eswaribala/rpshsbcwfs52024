@@ -8,8 +8,8 @@ public class VehicleThread extends Thread{
 
     @Override
     public void run() {
-        Bridge.BridgeMessage(vehicle);
-        TollBooth.tollMessage(vehicle);
+       System.out.print( Bridge.BridgeMessage(vehicle)+"->");
+        System.out.println( TollBooth.tollMessage(vehicle));
 
     }
 }
