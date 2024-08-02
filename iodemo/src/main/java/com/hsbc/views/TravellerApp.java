@@ -18,8 +18,7 @@ public class TravellerApp {
         try {
             TravellerDAL travellerDAL=new TravellerImpl("store",
                     "travellerinfo.dat");
-
-        //  addTraveller(travellerDAL,count);
+           // addTraveller(travellerDAL,count);
            travellerDAL.close();
            for(Traveller traveller: travellerDAL.getTravellers(count)){
                if(traveller !=null )
