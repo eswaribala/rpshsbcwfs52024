@@ -2,11 +2,12 @@ package com.hsbc.dal;
 
 import com.hsbc.models.Student;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface StudentDAL {
 
-    boolean addStudent(Student student);
+    boolean addStudent(Student student) throws SQLException, ClassNotFoundException;
     List<Student> getAllStudents();
     Student getStudent(int sapId);
 
