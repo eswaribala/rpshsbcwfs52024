@@ -4,6 +4,7 @@ import com.hsbc.helpers.MySQLHelper;
 import com.hsbc.models.Student;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
@@ -30,13 +31,15 @@ public class StudentImpl implements StudentDAL{
             preparedStatement.setString(2,student.getName());
             preparedStatement.setString(3,student.getStream());
             preparedStatement.setFloat(4,student.getPercentage());
-            preparedStatement.setDate(5,student.getDor());
-
-
+            preparedStatement.setDate(5, Date.valueOf(student.getDor()));
+            //execute query
+            int rows=preparedStatement.executeUpdate();
+            if(rows>0)
+                return true;
+            else
+                return false;
         }
 
-
-        return false;
     }
 
     @Override
