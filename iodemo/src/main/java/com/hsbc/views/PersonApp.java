@@ -3,11 +3,12 @@ package com.hsbc.views;
 import com.hsbc.dal.PersonDAL;
 import com.hsbc.dal.PersonImpl;
 import com.hsbc.models.Person;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Random;
-
+@Slf4j
 public class PersonApp {
 
     public static void main(String[] args){
@@ -15,8 +16,10 @@ public class PersonApp {
             PersonDAL personDAL=new PersonImpl("store","person.csv");
             //addPerson(personDAL);
             //display person
-            for(Person person: personDAL.getPersons())
-                System.out.println(person);
+            for(Person person: personDAL.getPersons()) {
+                log.info("" + person);
+
+            }
 
 
         } catch (IOException e) {
