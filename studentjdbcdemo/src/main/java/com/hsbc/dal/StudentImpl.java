@@ -1,5 +1,7 @@
 package com.hsbc.dal;
 
+import com.hsbc.exceptions.DbConnectionException;
+import com.hsbc.exceptions.DriverException;
 import com.hsbc.helpers.MySQLHelper;
 import com.hsbc.models.Student;
 
@@ -21,25 +23,36 @@ public class StudentImpl implements StudentDAL{
     private ResultSet resultSet;
 
 
-    public StudentImpl() throws SQLException, ClassNotFoundException {
+    public StudentImpl()  {
         //connection= MySQLHelper.getConnection();
         resourceBundle=ResourceBundle.getBundle("db");
     }
 
 
     @Override
-    public boolean addStudent(Student student) throws SQLException, ClassNotFoundException {
+    public boolean addStudent(Student student) throws DbConnectionException, DriverException {
         String query=resourceBundle.getString("addStudent");
-        try(Connection connection=MySQLHelper.getConnection()){
-            preparedStatement=connection.prepareStatement(query);
-            preparedStatement.setInt(1,student.getSapId());
-            preparedStatement.setString(2,student.getName());
-            preparedStatement.setString(3,student.getStream());
-            preparedStatement.setFloat(4,student.getPercentage());
+        int rows=0;
+        try{
+        try(Connection connection=MySQLHelper.getConnection()) {
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, student.getSapId());
+            preparedStatement.setString(2, student.getName());
+            preparedStatement.setString(3, student.getStream());
+            preparedStatement.setFloat(4, student.getPercentage());
             preparedStatement.setDate(5, Date.valueOf(student.getDor()));
             //execute query
-            int rows=preparedStatement.executeUpdate();
-            if(rows>0)
+             rows= preparedStatement.executeUpdate();
+
+        }catch(SQLException e){
+
+            throw new DbConnectionException("Db Connection Error");
+        }
+
+        }catch(ClassNotFoundException e){
+            throw new DriverException("Driver not found Exception");
+        }finally {
+            if (rows > 0)
                 return true;
             else
                 return false;
