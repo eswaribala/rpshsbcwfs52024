@@ -14,16 +14,15 @@ import java.util.Random;
 
 public class StudentApp {
     public static void main(String... args){
-
         try {
             StudentDAL studentDAL=new StudentImpl();
-           // studentDAL.updateStudent(10,"EEE");
-
+            studentDAL.updateStudent(1002,"Mechanical");
+        System.out.println(studentDAL.getStudent(1002));
            // addStudents(studentDAL);
-            for(Student student: studentDAL.getAllStudents())
-                System.out.println(student);
+            //for(Student student: studentDAL.getAllStudents())
+              //  System.out.println(student);
 
-        } catch (DbConnectionException e) {
+       } catch (DbConnectionException e) {
             //throw new RuntimeException(e);
         }
 

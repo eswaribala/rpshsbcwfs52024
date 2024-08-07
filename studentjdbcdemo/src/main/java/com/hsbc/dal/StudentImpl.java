@@ -2,6 +2,7 @@ package com.hsbc.dal;
 
 import com.hsbc.exceptions.DbConnectionException;
 import com.hsbc.exceptions.DriverException;
+import com.hsbc.exceptions.StudentNotFoundException;
 import com.hsbc.helpers.MySQLHelper;
 import com.hsbc.models.Student;
 
@@ -61,7 +62,7 @@ public class StudentImpl implements StudentDAL{
     }
 
     @Override
-    public List<Student> getAllStudents() throws DbConnectionException {
+    public List<Student> getAllStudents()  {
        List<Student> students=new ArrayList<Student>();
        String query=resourceBundle.getString("getAllStudents");
        try {
@@ -88,7 +89,26 @@ public class StudentImpl implements StudentDAL{
 
     @Override
     public Student getStudent(int sapId) {
-        return null;
+        Student student=null;
+        String query=resourceBundle.getString("getStudent");
+        try {
+            try (Connection connection = MySQLHelper.getConnection()) {
+                preparedStatement = connection.prepareStatement(query);
+                preparedStatement.setInt(1,sapId);
+                resultSet = preparedStatement.executeQuery();
+                resultSet.next();
+                student= new Student(resultSet.getInt(1),
+                            resultSet.getString(2),
+                            resultSet.getString(3),
+                            resultSet.getFloat(4),
+                            resultSet.getDate(5).toLocalDate());
+            }
+        }catch(SQLException e){
+            throw new DbConnectionException("Db Connection Error");
+
+        }finally {
+            return student;
+        }
     }
 
     @Override
@@ -110,7 +130,7 @@ public class StudentImpl implements StudentDAL{
         if (rows > 0)
             return true;
         else
-            return false;
+            throw new StudentNotFoundException("Record Not found");
     }
 
     }
