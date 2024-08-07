@@ -10,10 +10,10 @@ import java.util.List;
 public interface StudentDAL {
 
     boolean addStudent(Student student) throws  DbConnectionException, DriverException;
-    List<Student> getAllStudents() throws SQLException, ClassNotFoundException;
+    List<Student> getAllStudents() throws DbConnectionException;
     Student getStudent(int sapId);
 
-    boolean updateStudent(int sapId, String stream) throws SQLException, ClassNotFoundException;
+    boolean updateStudent(int sapId, String stream);
 
     boolean deleteStudent(int sapId);
 

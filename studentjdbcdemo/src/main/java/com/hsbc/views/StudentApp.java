@@ -32,7 +32,7 @@ public class StudentApp {
     }
 
     public static  void addStudents(StudentDAL studentDAL) throws DbConnectionException, DriverException {
-        for(int count=10;count<100;count++){
+        for(int count=1000;count<1100;count++){
             studentDAL.addStudent(new Student(count,"student"+count,
                     "CSE",7.45f,
                     LocalDate.of(new Random().nextInt(1991,2023),

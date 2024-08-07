@@ -61,21 +61,28 @@ public class StudentImpl implements StudentDAL{
     }
 
     @Override
-    public List<Student> getAllStudents() throws SQLException, ClassNotFoundException {
+    public List<Student> getAllStudents() throws DbConnectionException {
        List<Student> students=new ArrayList<Student>();
        String query=resourceBundle.getString("getAllStudents");
-        try(Connection connection=MySQLHelper.getConnection()){
-           statement=connection.createStatement();
-           resultSet=statement.executeQuery(query);
-           while(resultSet.next()){
-               students.add(new Student(resultSet.getInt(1),
-                       resultSet.getString(2),
-                       resultSet.getString(3),
-                       resultSet.getFloat(4),
-                       resultSet.getDate(5).toLocalDate()));
+       try {
+           try (Connection connection = MySQLHelper.getConnection()) {
+               statement = connection.createStatement();
+               resultSet = statement.executeQuery(query);
+               while (resultSet.next()) {
+                   students.add(new Student(resultSet.getInt(1),
+                           resultSet.getString(2),
+                           resultSet.getString(3),
+                           resultSet.getFloat(4),
+                           resultSet.getDate(5).toLocalDate()));
+               }
            }
-       }
+       }catch(SQLException e){
+           throw new DbConnectionException("Db Connection Error");
+
+    }finally {
         return students;
+    }
+
 
     }
 
