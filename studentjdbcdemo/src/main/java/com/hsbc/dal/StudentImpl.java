@@ -23,6 +23,8 @@ public class StudentImpl implements StudentDAL{
 
     private ResultSet resultSet;
 
+    private ResultSetMetaData resultSetMetaData;
+
 
     public StudentImpl()  {
         //connection= MySQLHelper.getConnection();
@@ -97,6 +99,11 @@ public class StudentImpl implements StudentDAL{
                 preparedStatement.setInt(1,sapId);
                 resultSet = preparedStatement.executeQuery();
                 resultSet.next();
+                resultSetMetaData=resultSet.getMetaData();
+               for(int count=1;count<=resultSetMetaData.getColumnCount();count++){
+                   System.out.println(resultSetMetaData.getColumnName(count));
+               }
+
                 student= new Student(resultSet.getInt(1),
                             resultSet.getString(2),
                             resultSet.getString(3),
