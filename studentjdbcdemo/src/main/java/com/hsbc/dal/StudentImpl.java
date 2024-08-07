@@ -64,6 +64,37 @@ public class StudentImpl implements StudentDAL{
     }
 
     @Override
+    public boolean addStudents(List<Student> students) throws DriverException,
+            DbConnectionException {
+        String query=resourceBundle.getString("addStudent");
+        try {
+            Connection connection=MySQLHelper.getConnection();
+            //transaction
+            connection.setAutoCommit(false);
+            preparedStatement=connection.prepareStatement(query);
+            for(int count=0;count<students.size();count++){
+                preparedStatement.setInt(1, students.get(count).getSapId());
+                preparedStatement.setString(2, students.get(count).getName());
+                preparedStatement.setString(3, students.get(count).getStream());
+                preparedStatement.setFloat(4, students.get(count)
+                        .getPercentage());
+                preparedStatement.setDate(5,
+                        Date.valueOf(students.get(count).getDor()));
+                preparedStatement.addBatch();
+
+            }
+
+
+        } catch (ClassNotFoundException e) {
+            throw new DriverException("Driver Not Found");
+        } catch (SQLException e) {
+            throw new DbConnectionException("Connection Error");
+        }
+
+
+    }
+
+    @Override
     public List<Student> getAllStudents()  {
        List<Student> students=new ArrayList<Student>();
        String query=resourceBundle.getString("getAllStudents");

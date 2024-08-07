@@ -10,6 +10,7 @@ import java.util.List;
 public interface StudentDAL {
 
     boolean addStudent(Student student) throws  DbConnectionException, DriverException;
+    boolean addStudents(List<Student> students ) throws DriverException, DbConnectionException;
     List<Student> getAllStudents() throws DbConnectionException;
     Student getStudent(int sapId);
 
