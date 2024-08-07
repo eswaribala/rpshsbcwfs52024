@@ -67,8 +67,11 @@ public class StudentImpl implements StudentDAL{
     public boolean addStudents(List<Student> students) throws DriverException,
             DbConnectionException {
         String query=resourceBundle.getString("addStudent");
+        Connection connection=null;
+        Savepoint savepoint=null;
+        List<Integer> status=new ArrayList();
         try {
-            Connection connection=MySQLHelper.getConnection();
+            connection=MySQLHelper.getConnection();
             //transaction
             connection.setAutoCommit(false);
             preparedStatement=connection.prepareStatement(query);
@@ -81,14 +84,33 @@ public class StudentImpl implements StudentDAL{
                 preparedStatement.setDate(5,
                         Date.valueOf(students.get(count).getDor()));
                 preparedStatement.addBatch();
-
+                savepoint=connection.setSavepoint();
             }
-
+            int[] statusData=preparedStatement.executeBatch();
+            for(int i=0;i<statusData.length;i++)
+                status.add(statusData[i]);
+            connection.commit();
 
         } catch (ClassNotFoundException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                throw new DriverException("Driver Not Found");
+            }
             throw new DriverException("Driver Not Found");
+
         } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                throw new DbConnectionException("Connection Error");
+            }
             throw new DbConnectionException("Connection Error");
+        }finally {
+            if(status.size()>0)
+           return true;
+            else
+                return false;
         }
 
 
