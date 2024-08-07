@@ -107,7 +107,10 @@ public class StudentImpl implements StudentDAL{
             throw new DbConnectionException("Db Connection Error");
 
         }finally {
+          if (student!=null)
             return student;
+          else
+              throw new StudentNotFoundException("Record not found");
         }
     }
 
@@ -137,6 +140,27 @@ public class StudentImpl implements StudentDAL{
 
     @Override
     public boolean deleteStudent(int sapId) {
-        return false;
+        boolean status=false;
+        int rows=0;
+        String query=resourceBundle.getString("deleteStudent");
+        try {
+            try (Connection connection = MySQLHelper.getConnection()) {
+                preparedStatement = connection.prepareStatement(query);
+                preparedStatement.setInt(1,sapId);
+                rows=preparedStatement.executeUpdate();
+                connection.commit();
+            }
+        }catch(SQLException e){
+
+            throw new DbConnectionException("Db Connection Error");
+
+        }finally {
+            if (rows>0) {
+                status=true;
+                return status;
+            }
+            else
+                throw new StudentNotFoundException("Record not found");
+        }
     }
 }

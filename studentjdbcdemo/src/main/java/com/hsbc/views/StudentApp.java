@@ -16,8 +16,8 @@ public class StudentApp {
     public static void main(String... args){
         try {
             StudentDAL studentDAL=new StudentImpl();
-            studentDAL.updateStudent(1002,"Mechanical");
-        System.out.println(studentDAL.getStudent(1002));
+            studentDAL.updateStudent(1010,"IT");
+        System.out.println(studentDAL.getStudent(1010));
            // addStudents(studentDAL);
             //for(Student student: studentDAL.getAllStudents())
               //  System.out.println(student);
