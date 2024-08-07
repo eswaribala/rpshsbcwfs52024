@@ -13,7 +13,7 @@ public interface StudentDAL {
     List<Student> getAllStudents() throws DbConnectionException;
     Student getStudent(int sapId);
 
-    boolean updateStudent(int sapId, String stream);
+    boolean updateStudent(int sapId, String stream) throws DbConnectionException;
 
     boolean deleteStudent(int sapId);
 

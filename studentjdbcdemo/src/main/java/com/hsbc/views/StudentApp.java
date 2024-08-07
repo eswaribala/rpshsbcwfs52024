@@ -19,13 +19,11 @@ public class StudentApp {
             StudentDAL studentDAL=new StudentImpl();
            // studentDAL.updateStudent(10,"EEE");
 
-            addStudents(studentDAL);
-           // for(Student student: studentDAL.getAllStudents())
-             //   System.out.println(student);
+           // addStudents(studentDAL);
+            for(Student student: studentDAL.getAllStudents())
+                System.out.println(student);
 
         } catch (DbConnectionException e) {
-            //throw new RuntimeException(e);
-        } catch (DriverException e) {
             //throw new RuntimeException(e);
         }
 

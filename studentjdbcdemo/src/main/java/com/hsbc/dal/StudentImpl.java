@@ -92,19 +92,26 @@ public class StudentImpl implements StudentDAL{
     }
 
     @Override
-    public boolean updateStudent(int sapId, String stream) throws SQLException, ClassNotFoundException {
+    public boolean updateStudent(int sapId, String stream) throws DbConnectionException {
         String query=resourceBundle.getString("updateStudent");
-        try(Connection connection=MySQLHelper.getConnection()){
-            preparedStatement=connection.prepareStatement(query);
-            preparedStatement.setString(1,stream);
-            preparedStatement.setInt(2,sapId);
-            //execute query
-            int rows=preparedStatement.executeUpdate();
-            if(rows>0)
-                return true;
-            else
-                return false;
-        }
+        int rows=0;
+        try {
+            try (Connection connection = MySQLHelper.getConnection()) {
+                preparedStatement = connection.prepareStatement(query);
+                preparedStatement.setString(1, stream);
+                preparedStatement.setInt(2, sapId);
+                //execute query
+                rows = preparedStatement.executeUpdate();
+
+            }
+        }catch(SQLException e){
+            throw new DbConnectionException("Db Connection Error");
+        } finally {
+        if (rows > 0)
+            return true;
+        else
+            return false;
+    }
 
     }
 
