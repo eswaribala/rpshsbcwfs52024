@@ -8,10 +8,10 @@ import java.util.List;
 public interface StudentDAL {
 
     boolean addStudent(Student student) throws SQLException, ClassNotFoundException;
-    List<Student> getAllStudents();
+    List<Student> getAllStudents() throws SQLException, ClassNotFoundException;
     Student getStudent(int sapId);
 
-    Student updateStudent(int sapId, String stream);
+    boolean updateStudent(int sapId, String stream) throws SQLException, ClassNotFoundException;
 
     boolean deleteStudent(int sapId);
 

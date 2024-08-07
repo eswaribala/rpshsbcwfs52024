@@ -3,18 +3,23 @@ package com.hsbc.dal;
 import com.hsbc.helpers.MySQLHelper;
 import com.hsbc.models.Student;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class StudentImpl implements StudentDAL{
-    private static Connection connection;
+  //  private static Connection connection;
     private static ResourceBundle resourceBundle;
     //parameterized queries
     private PreparedStatement preparedStatement;
+
+    //ResultSet
+    private Statement statement;
+
+    private ResultSet resultSet;
+
 
     public StudentImpl() throws SQLException, ClassNotFoundException {
         //connection= MySQLHelper.getConnection();
@@ -43,8 +48,22 @@ public class StudentImpl implements StudentDAL{
     }
 
     @Override
-    public List<Student> getAllStudents() {
-        return null;
+    public List<Student> getAllStudents() throws SQLException, ClassNotFoundException {
+       List<Student> students=new ArrayList<Student>();
+       String query=resourceBundle.getString("getAllStudents");
+        try(Connection connection=MySQLHelper.getConnection()){
+           statement=connection.createStatement();
+           resultSet=statement.executeQuery(query);
+           while(resultSet.next()){
+               students.add(new Student(resultSet.getInt(1),
+                       resultSet.getString(2),
+                       resultSet.getString(3),
+                       resultSet.getFloat(4),
+                       resultSet.getDate(5).toLocalDate()));
+           }
+       }
+        return students;
+
     }
 
     @Override
@@ -53,8 +72,20 @@ public class StudentImpl implements StudentDAL{
     }
 
     @Override
-    public Student updateStudent(int sapId, String stream) {
-        return null;
+    public boolean updateStudent(int sapId, String stream) throws SQLException, ClassNotFoundException {
+        String query=resourceBundle.getString("updateStudent");
+        try(Connection connection=MySQLHelper.getConnection()){
+            preparedStatement=connection.prepareStatement(query);
+            preparedStatement.setString(1,stream);
+            preparedStatement.setInt(2,sapId);
+            //execute query
+            int rows=preparedStatement.executeUpdate();
+            if(rows>0)
+                return true;
+            else
+                return false;
+        }
+
     }
 
     @Override
