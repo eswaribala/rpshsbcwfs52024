@@ -20,14 +20,15 @@
 <section class="container-fluid p-3 mb-2 bg-primary text-dark"
          style="height: 150px;">
 
-    <article>
-        <figure>
+    <article style="display: flex;justify-content: space-evenly" class="container-fluid  bg-primary text-dark" >
+        <figure  class="p-3">
             <img src="images/logo.jpeg"
                  style="width: 100px;height:100px ">
         </figure>
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs p-3 ml-3" style="align-items: center" >
+
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                <a class="nav-link active dropdown-toggle"  href="#" aria-expanded="false">Dropdown</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -36,6 +37,10 @@
                     <li><a class="dropdown-item" href="#">Separated link</a></li>
                 </ul>
             </li>
+            <form class="d-flex p-2">
+                <input class="form-control me-50"type="search" style="width:500px;height: 50px;" placeholder="Search" aria-label="Search">
+                <button class="btn bg-success" style="height: 50px;" type="submit">Search</button>
+            </form>
         </ul>
     </article>
 
