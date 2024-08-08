@@ -10,22 +10,28 @@ import com.hsbc.models.Student;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class StudentApp {
     public static void main(String... args){
-        //try {
+        try {
             StudentDAL studentDAL=new StudentImpl();
+            //bulk transaction
+           studentDAL.addStudents(sendStudentsData());
+
+
             //studentDAL.updateStudent(1010,"IT");
            // studentDAL.deleteStudent(1010);
-        System.out.println(studentDAL.getStudent(1011));
+       // System.out.println(studentDAL.getStudent(1011));
            // addStudents(studentDAL);
             //for(Student student: studentDAL.getAllStudents())
               //  System.out.println(student);
 
-       //} catch (DbConnectionException e) {
+       } catch (DbConnectionException | DriverException e) {
             //throw new RuntimeException(e);
-        //}
+        }
 
     }
 
@@ -39,6 +45,18 @@ public class StudentApp {
                     )));
         }
 
+    }
+    public static  List<Student> sendStudentsData()  {
+        List<Student> studentList=new ArrayList<Student>();
+        for(int count=5000;count<5100;count++){
+           studentList.add(new Student(count,"student"+count,
+                    "CSE",7.45f,
+                    LocalDate.of(new Random().nextInt(1991,2023),
+                            new Random().nextInt(1,12),
+                            new Random().nextInt(1,26)
+                    )));
+        }
+        return studentList;
     }
 
 
