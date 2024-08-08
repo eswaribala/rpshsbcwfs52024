@@ -12,7 +12,6 @@
     bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link type="text/css" rel="stylesheet" href="css/index.css"/>
-    <script type="text/javascript" src="scripts/index.js"></script>
 </head>
 <body>
 <header  class="container-fluid p-3 mb-0  text-dark" style="background-color: black">
@@ -46,21 +45,56 @@
         </ul>
         <article class="container-fluid p-3 m-3" style="width:300px; justify-content: space-evenly">
 
-            <a id="signIn" class="anchor" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <a class="anchor" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
             </svg>SignIn</a>
-        <a id="singUp" class="anchor"  href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-            </svg>
-            SignUp
-        </a>
+
         </article>
     </article>
 
 </section>
+
+<section>
+    <form class="container-fluid p-2 " style="width: 50%;background-color:aliceblue">
+       <fieldset >
+           <legend style="text-align: center;font-weight:bold;color: blue">Customer Signup</legend>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required pattern="[A-Za-z]{5,25}">
+        </div>
+        <div class="mb-3">
+            <label for="dob" class="form-label">DOB</label>
+            <input type="date" class="form-control" id="dob">
+        </div>
+        <div class="mb-3 form-check">
+            <label  for="gender" class="form-label">Gender</label>
+            <input type="text" class="form-control" id="gender" list="genderList">
+        </div>
+           <div class="mb-3">
+               <label for="exampleInputEmail1" class="form-label">Email address</label>
+               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+           </div>
+           <div class="mb-3">
+               <label for="exampleInputPassword1" class="form-label">Password</label>
+               <input type="password" class="form-control" id="exampleInputPassword1">
+           </div>
+           <div class="mb-3 form-check">
+               <input type="checkbox" class="form-check-input" id="exampleCheck1">
+               <label class="form-check-label" for="exampleCheck1">Check me out</label>
+           </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+       </fieldset>
+    </form>
+    <datalist id="genderList">
+        <option>MALE</option>
+        <option>FEMALE</option>
+        <option>TRANSGENDER</option>
+    </datalist>
+
+</section>
+
 
 
 </body>
