@@ -5,9 +5,9 @@
 
 }
 h1{
-    background-image: radial-gradient(black,blueviolet,goldenrod,darkslateblue,lawngreen,orange);
+    background-image: radial-gradient(black,blueviolet,goldenrod,yellow, pink,darkslateblue,lawngreen,orange);
     -webkit-background-clip: text;
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: bold;
     color: transparent;
     text-align: center;
@@ -19,5 +19,6 @@ h1{
     font-size: x-large;
     color: white;
     font-weight: bold;
-    justify-content: center;
+
+
 }
