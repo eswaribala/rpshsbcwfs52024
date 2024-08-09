@@ -22,6 +22,36 @@ window.addEventListener('load',function(){
            "gender":gender
        }
        console.log(customer);
-       window.localStorage.setItem("customer",JSON.stringify(customer));
+      // window.localStorage.setItem("customer",JSON.stringify(customer));
+       sendCustomerDataAJAX(customer);
     })
 });
+
+
+function sendCustomerDataAJAX(customer){
+    let ajaxObject;
+    try{
+        ajaxObject=new XMLHttpRequest()
+    }catch (e){
+        try {
+            ajaxObject = new ActiveXObject("");
+        }catch (e){
+            console.log("AJAX not supported....")
+        }
+    }
+    //open the connection
+    ajaxObject.open("POST",
+        "http://localhost:7070/pharmaappjee_war_exploded/signup-servlet",
+        true);
+    //servlet call
+    ajaxObject.send(customer);
+
+    //check request status
+    ajaxObject.onreadystatechange=function (){
+        if((ajaxObject.readyState==4) && (ajaxObject.status==200)){
+            console.log(ajaxObject.responseText);
+        }
+    }
+
+
+}
