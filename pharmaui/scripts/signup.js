@@ -1,5 +1,9 @@
 window.addEventListener('load',function(){
-
+    document.querySelector('#signIn').addEventListener('click',
+        function(){
+            // alert("open signup");
+            window.location.href="signin.html"
+        })
 
     document.querySelector("#customerForm")
         .addEventListener('submit',function (){
@@ -18,6 +22,6 @@ window.addEventListener('load',function(){
            "gender":gender
        }
        console.log(customer);
-       window.localStorage.setItem("customer",customer);
+       window.localStorage.setItem("customer",JSON.stringify(customer));
     })
 });

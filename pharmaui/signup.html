@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <title>HSBCMEDS</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link href="lib/bootstrap-5.0.2-dist/css/bootstrap.min.css"
+          rel="stylesheet" crossorigin="anonymous">
+    <script type="text/javascript" src="lib/@popperjs/core/dist/umd/popper.min.js"  crossorigin="anonymous"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/
-    bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"  crossorigin="anonymous"></script>
+
     <link type="text/css" rel="stylesheet" href="css/index.css"/>
     <script type="text/javascript" src="scripts/signup.js"></script>
 </head>
@@ -27,10 +26,10 @@
                  style="width: 70px;height:70px;
                  border-radius: 50px 50px 50px 50px">
         </figure>
-        <ul class="nav nav-tabs p-1" style="align-items: center;justify-content: space-evenly" >
+        <ul class="nav nav-tabs" style="align-items: center;justify-content: space-evenly" >
 
-            <li class="nav-item dropdown d-flex p-3" style="height: 80px;">
-                <a class="nav-link active dropdown-toggle"  href="#" aria-expanded="false">Dropdown</a>
+            <li class="nav-item dropdown dropdown d-flex p-3" style="height: 80px;">
+                <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -39,6 +38,7 @@
                     <li><a class="dropdown-item" href="#">Separated link</a></li>
                 </ul>
             </li>
+
             <form class="d-flex p-2">
                 <input class="form-control me-50"type="search" style="width:500px;height: 50px;" placeholder="Search" aria-label="Search">
                 <button class="btn bg-success" style="height: 50px;" type="submit">Search</button>
@@ -46,7 +46,7 @@
         </ul>
         <article class="container-fluid p-3 m-3" style="width:300px; justify-content: space-evenly">
 
-            <a class="anchor" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <a id="signIn" class="anchor" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
             </svg>SignIn</a>
