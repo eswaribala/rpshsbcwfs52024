@@ -1,0 +1,104 @@
+ls /etc/default
+ps -ef | grep init
+ls -l /etc/r*
+#ubuntu desktop
+https://www.zdnet.com/article/how-to-run-run-the-native-ubuntu-desktop-on-windows-10/
+apt-get install ubuntu-desktop
+apt-get install unity
+apt-get install compiz-core
+apt-get install compizconfig-settings-manager
+ export DISPLAY=localhost:0
+Ccsm
+
+#online terminal
+
+https://cocalc.com/doc/terminal.html
+sudo login
+whoami
+
+
+#to check strength of the password
+sudo apt-get update
+sudo apt-get install cracklib-runtime
+echo viki | cracklib-check
+
+
+#To generate the password
+openssl rand -base64 32
+sudo apt-get install pwgen
+pwgen 14 1
+
+gpg --gen-random --armor 1 14
+
+
+#Who logged in
+sudo ps au
+who -H
+who -u
+whoami
+
+sudo apt-get install finger
+finger test
+
+#to view hierarchical file structure
+
+sudo apt-get install tree
+tree /etc
+
+#copy dir recursively
+ cp -r ./virtusatraining2020 ./virtusa.$(date +%F_%H%M%S)
+
+#less command
+less -p div newsline.html
+ head -20 newsline.html
+  tail -20 -f newsline.html
+  
+  
+  #mysql
+  sudo apt-get remove --purge *mysql*
+sudo rm -rf /etc/mysql /var/lib/mysql
+sudo apt-get remove --purge *mariadb*
+sudo apt-get autoremove
+sudo apt-get autoclean
+dpkg -l | grep mariadb
+dpkg -l | grep mysql
+
+
+Now to fix all broken repositories
+sudo apt-get install –f
+Now Upgrading the Repositories
+sudo apt update
+sudo apt upgrade
+Now, to install MySQL 8, simply type:
+sudo apt install mysql-server
+
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+(change port)
+
+sudo service mysql start
+sudo mysql_secure_installation
+mysql -u root  -p
+
+create database ecommercedb;
+use ecommercedb;
+create table Product(ProductId int primary key, Name varchar(50), Cost int);
+
+
+#uninstall
+sudo apt list –installed
+sudo apt remove xfce4
+sudo apt-get remove --auto-remove ubuntu-gnome-desktop
+sudo apt-get purge --auto-remove ubuntu-gnome-desktop
+
+
+cat newsline.html | head -5 | tail -7
+
+ ls -l | find ./ -type f -name "*.txt"
+ 
+  cut -d: -f1 /etc/group
+  
+  FTP URL: ftp.dlptest.com or ftp://ftp.dlptest.com/
+FTP User: dlpuser@dlptest.com
+Password: eUj8GeW55SvYaswqUyDSm5v6N
+
+  
