@@ -44,7 +44,8 @@ function sendCustomerDataAJAX(customer){
         "http://localhost:7070/pharmaappjee_war_exploded/signup-servlet",
         true);
     //servlet call
-    ajaxObject.send(customer);
+
+    ajaxObject.send("name=Parameswari"+"&email="+customer.email);
 
     //check request status
     ajaxObject.onreadystatechange=function (){
