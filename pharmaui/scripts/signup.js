@@ -45,7 +45,7 @@ function sendCustomerDataAJAX(customer){
         true);
     //servlet call
 
-    ajaxObject.send("name=Parameswari"+"&email="+customer.email);
+    ajaxObject.send(JSON.stringify(customer));
 
     //check request status
     ajaxObject.onreadystatechange=function (){
