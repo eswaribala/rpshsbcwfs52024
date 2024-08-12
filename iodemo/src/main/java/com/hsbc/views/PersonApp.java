@@ -11,6 +11,9 @@ import java.util.Random;
 @Slf4j
 public class PersonApp {
 
+    /*
+    source="tcp:16000" index="persondata" sourcetype="log4j"
+     */
     public static void main(String[] args){
         try {
             PersonDAL personDAL=new PersonImpl("store","person.csv");

@@ -40,10 +40,17 @@ function sendCustomerDataAJAX(customer){
         }
     }
     //open the connection
+
     ajaxObject.open("POST",
         "http://localhost:7070/pharmaappjee_war_exploded/signup-servlet",
         true);
     //servlet call
+    ajaxObject.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    ajaxObject.setRequestHeader('Access-Control-Allow-Origin', '*');
+    ajaxObject.setRequestHeader("Access-Control-Allow-Methods", "POST");
+    ajaxObject.setRequestHeader("Access-Control-Allow-Headers", "Content-Type");
+    ajaxObject.setRequestHeader('Content-type', 'application/json')
+    ajaxObject.setRequestHeader("Access-Control-Max-Age", "86400");
 
     ajaxObject.send(JSON.stringify(customer));
 
