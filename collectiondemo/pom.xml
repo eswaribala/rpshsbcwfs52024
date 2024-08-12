@@ -102,9 +102,6 @@
             <version>1.6.2</version>
             <scope>runtime</scope>
         </dependency>
-
-
-
     </dependencies>
 
     <repositories>

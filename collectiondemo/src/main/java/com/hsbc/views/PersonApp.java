@@ -3,14 +3,15 @@ package com.hsbc.views;
 import com.hsbc.dal.PersonDAL;
 import com.hsbc.dal.PersonImpl;
 import com.hsbc.models.Person;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.Random;
 
+@Slf4j
 public class PersonApp {
-
     public static void main(String[] args){
         try {
             PersonDAL personDAL=new PersonImpl("store","person.csv");
@@ -18,10 +19,9 @@ public class PersonApp {
             //iterator
             Iterator<Person> itr= personDAL.getPersons().iterator();
             while(itr.hasNext()){
-                System.out.println(itr.next());
+               // System.out.println(itr.next());
+                log.info(""+itr.next());
             }
-
-
 
         } catch (IOException e) {
 

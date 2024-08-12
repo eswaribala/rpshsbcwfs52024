@@ -1,0 +1,54 @@
+<configuration>
+
+    <property name="HOME_LOG" value="logs/app.log"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${HOME_LOG}</file>
+        <append>true</append>
+        <immediateFlush>true</immediateFlush>
+        <encoder>
+            <pattern>%d %p %c{1} [%t] %m%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="socket" class="com.splunk.logging.TcpAppender">
+
+        <RemoteHost>127.0.0.1</RemoteHost>
+        <Port>16000</Port>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date{ISO8601} [%thread] %level: %msg%n</pattern>
+        </layout>
+    </appender>
+    <!--<appender name="http" class="com.splunk.logging.HttpEventCollectorLogbackAppender">
+
+        <Http name="SplunkAppender" url="http://localhost:8000/services/collector">
+            <Property name="token" value="573425b7-21c5-4a93-a428-aa3895a1f799" />
+            <PatternLayout pattern="%m%n" />
+        </Http>
+    </appender>-->
+    <logger name="com.hsbc" level="INFO" >
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="socket"/>
+        <!-- <appender-ref ref="http"/>-->
+    </logger>
+
+
+    <logger name="com.hsbc" level="debug" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="socket"/>
+    </logger>
+
+    <root level="error">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
