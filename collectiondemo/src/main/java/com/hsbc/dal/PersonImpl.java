@@ -11,7 +11,10 @@ import java.util.List;
 public class PersonImpl implements PersonDAL{
     private File file;
 
-    public  PersonImpl(String dirName,String fileName) throws IOException {
+    public PersonImpl() {
+    }
+
+    public  PersonImpl(String dirName, String fileName) throws IOException {
         //create dir
         file=new File(dirName);
         if(!file.exists()){
