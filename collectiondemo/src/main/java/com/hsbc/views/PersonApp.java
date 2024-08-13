@@ -17,10 +17,13 @@ public class PersonApp {
             PersonDAL personDAL=new PersonImpl("store","person.csv");
             //addPerson(personDAL);
             //iterator
+            Person person=null;
             Iterator<Person> itr= personDAL.getPersons().iterator();
             while(itr.hasNext()){
                // System.out.println(itr.next());
-                log.info(""+itr.next());
+                person=itr.next();
+                log.info(""+person.getName());
+                log.info(""+person.getDob().getYear());
             }
 
         } catch (IOException e) {

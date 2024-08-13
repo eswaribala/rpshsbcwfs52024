@@ -1,6 +1,6 @@
 <configuration>
 
-    <property name="HOME_LOG" value="logs/app.log"/>
+    <property name="HOME_LOG" value="logs/person.log"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
@@ -21,7 +21,7 @@
     <appender name="socket" class="com.splunk.logging.TcpAppender">
 
         <RemoteHost>127.0.0.1</RemoteHost>
-        <Port>16000</Port>
+        <Port>18000</Port>
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>%date{ISO8601} [%thread] %level: %msg%n</pattern>
         </layout>
