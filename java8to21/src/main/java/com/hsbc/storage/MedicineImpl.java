@@ -44,7 +44,7 @@ return optionalMedicine=medicineList.stream()
     @Override
     public Medicine searchMedicineByName(String name) {
 
-       medicineList.stream().filter(m->m.getName().equals(name)).findFirst()
+      return medicineList.stream().filter(m->m.getName().equals(name)).findFirst()
                .orElse(null);
     }
 

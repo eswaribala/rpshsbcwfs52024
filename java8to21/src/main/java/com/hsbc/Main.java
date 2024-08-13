@@ -6,6 +6,8 @@ import com.hsbc.storage.MedicineImpl;
 import com.hsbc.storage.OTPGenerator;
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 import java.util.function.*;
@@ -22,6 +24,45 @@ public class Main {
             for (int count = 0; count < 100; count++)
                 medicineDAL.addMedicine(createMedicine());
         }
+        //display medicines
+      //  medicineDAL.getAllMedicines().stream().forEach(System.out::println);
+
+        //sort by price
+        /*
+        medicineDAL.getAllMedicines().stream().sorted((m1,m2)->{
+            if(m1.getPrice()>m2.getPrice())
+                return 1;
+            else if (m1.getPrice()<m2.getPrice()) {
+                return -1;
+
+            }else
+                return 0;
+        }).forEach(System.out::println);
+
+       */
+        List<String> names=  List.of("Parameswari","Bala","Suman","Jaya","Sandeep");
+
+      Optional<String> optionalData= names.stream().filter(n->n.startsWith("S")).findAny();
+      if(optionalData.isPresent())
+      {
+          System.out.println(optionalData.get());
+      }
+
+      //all match
+        System.out.println(names.stream().allMatch(n->n.startsWith("S")));
+        System.out.println(names.stream().anyMatch(n->n.startsWith("S")));
+
+
+        List<String> lst1 = Arrays.asList("Jhonny", "David", "Jack", "Duke", "Jill","Dany","Julia","Jenish","Divya");
+        List<String> lst2 = Arrays.asList("Jhonny", "David", "Jack", "Duke", "Jill","Dany","Julia","Jenish","Divya");
+
+        Optional<String> findFirst = lst1.parallelStream().filter(s -> s.startsWith("D")).findFirst();
+        Optional<String> fidnAny = lst2.parallelStream().filter(s -> s.startsWith("J")).findAny();
+
+        System.out.println(findFirst.get()); //Always print David
+        System.out.println(fidnAny.get()); //Print Jack
+
+
 
 
 
