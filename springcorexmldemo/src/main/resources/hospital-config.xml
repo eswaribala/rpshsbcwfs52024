@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--Person bean instantiated -->
+<bean id="person" class="com.hsbc.models.Person">
+    <!--Dependency Injection -->
+    <property name="personId" value="765376"></property>
+    <property name="dob" ref="dob"></property>
+    <property name="fullName" ref="fullName"></property>
+</bean>
+<bean id="fullName" class="com.hsbc.models.FullName">
+    <property name="firstName" value="Parameswari"></property>
+    <property name="middleName" value=""></property>
+    <property name="lastName" value="Bala"></property>
+</bean>
+<bean id="dob" class="java.util.Date">
+    <property name="year" value="1970"></property>
+    <property name="month" value="12"></property>
+    <property name="date" value="2"></property>
+</bean>
+</beans>

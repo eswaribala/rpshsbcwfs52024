@@ -1,0 +1,3 @@
+module UIModule {
+    requires adminmodule;
+}
