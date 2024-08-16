@@ -4,20 +4,78 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!--Person bean instantiated -->
-<bean id="person" class="com.hsbc.models.Person">
-    <!--Dependency Injection -->
-    <property name="personId" value="765376"></property>
-    <property name="dob" ref="dob"></property>
-    <property name="fullName" ref="fullName"></property>
+    <!--scope="prototype"-->
+<bean id="person" class="com.hsbc.models.Person"  autowire="constructor">
+   <constructor-arg index="0" value="2314324"></constructor-arg>
+
+    <!-- Dependency Injection -->
+   <!-- <property name="personId" value="765376"></property> -->
+   <!-- <property name="dob" ref="dob"></property>
+    <property name="fullName" ref="fullName"></property>-->
 </bean>
 <bean id="fullName" class="com.hsbc.models.FullName">
-    <property name="firstName" value="Parameswari"></property>
+   <!--<property name="firstName" value="Parameswari"></property>
     <property name="middleName" value=""></property>
-    <property name="lastName" value="Bala"></property>
+    <property name="lastName" value="Bala"></property>-->
+    <constructor-arg index="0" value="Parameswari"></constructor-arg>
+    <constructor-arg index="1" value=""></constructor-arg>
+    <constructor-arg index="2" value="Bala"></constructor-arg>
 </bean>
 <bean id="dob" class="java.util.Date">
-    <property name="year" value="1970"></property>
-    <property name="month" value="12"></property>
-    <property name="date" value="2"></property>
+   <constructor-arg index="0" value="70">
+
+    </constructor-arg>
+    <constructor-arg index="1" value="11">
+
+    </constructor-arg>
+    <constructor-arg index="2" value="2">
+
+    </constructor-arg>
+
+    <!--<property name="year" value="70"></property>
+    <property name="month" value="11"></property>
+    <property name="date" value="2"></property>-->
 </bean>
+
+<bean id="employee" class="com.hsbc.models.Employee" autowire="constructor" parent="person">
+    <constructor-arg index="0" value="5601">
+
+    </constructor-arg>
+
+    <constructor-arg index="2" value="450000"></constructor-arg>
+</bean>
+
+<bean id="patient" class="com.hsbc.models.Patient" autowire="constructor" parent="person">
+    <constructor-arg index="0" value="56890"></constructor-arg>
+  <!-- <constructor-arg index="1">
+       <list>
+           <ref bean="history1"></ref>
+           <ref bean="history2"></ref>
+           <ref bean="history3"></ref>
+       </list>
+   </constructor-arg> -->
+    <constructor-arg index="2" value="Overshooted"></constructor-arg>
+</bean>
+
+<bean id="designation" class="com.hsbc.models.Designation" factory-method="valueOf">
+    <constructor-arg index="0" value="Surgeon"></constructor-arg>
+</bean>
+
+ <bean id="history1" class="com.hsbc.models.History">
+     <constructor-arg index="0" value="Oral Medicine"></constructor-arg>
+     <constructor-arg index="1" value="Amar"></constructor-arg>
+     <constructor-arg index="2" value="Gluco-500"></constructor-arg>
+ </bean>
+    <bean id="history2" class="com.hsbc.models.History">
+        <constructor-arg index="0" value="Insulin Injection"></constructor-arg>
+        <constructor-arg index="1" value="Amar"></constructor-arg>
+        <constructor-arg index="2" value="Insulin-500"></constructor-arg>
+
+    </bean>
+    <bean id="history3" class="com.hsbc.models.History">
+        <constructor-arg index="0" value="Diet"></constructor-arg>
+        <constructor-arg index="1" value="Suma"></constructor-arg>
+        <constructor-arg index="2" value="Diet Table"></constructor-arg>
+
+    </bean>
 </beans>

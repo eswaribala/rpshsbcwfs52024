@@ -21,9 +21,15 @@ public class Main {
         //inversion of control
         Person person= (Person) factory.getBean("person");
         if(person!=null)
-            System.out.println("Object created...");
+            System.out.println(person);
         else
             System.out.println("Object not created...");
+
+        //singleton
+        Person person1=(Person) factory.getBean("person");
+        person1.setPersonId(1005);
+        System.out.println(person);
+        System.out.println(person1);
 
 
 

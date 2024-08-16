@@ -5,16 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class Person {
-    protected long personId;
-    protected FullName fullName;
-    protected Date dob;
-
+public class Patient  extends Person{
+    private long patientId;
+    private List<History> history;
+    private String issue;
 
 }
