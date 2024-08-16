@@ -7,22 +7,32 @@
        http://www.springframework.org/schema/context
 	   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-  <context:annotation-config></context:annotation-config>
-  <context:component-scan base-package="com.hsbc"></context:component-scan>
+ <context:annotation-config></context:annotation-config>
+    <context:component-scan base-package="com.hsbc"></context:component-scan>
 
 <!--Person bean instantiated -->
     <!--scope="prototype"-->
+<!--
 <bean id="person" class="com.hsbc.models.Person" >
 
 </bean>
-<bean id="fullName" class="com.hsbc.models.FullName">
-   <property name="firstName" value="Parameswari"></property>
-    <property name="middleName" value=""></property>
-    <property name="lastName" value="Bala"></property>
+  <bean id="fullName1" class="com.hsbc.models.FullName">
+   <constructor-arg index="0" value="Parameswari"></constructor-arg>
+    <constructor-arg index="1" value=""></constructor-arg>
+    <constructor-arg index="2" value="Parameswari"></constructor-arg>
 </bean>
-<bean id="dob" class="java.util.Date">
+    <bean id="fullName2" class="com.hsbc.models.FullName">
+        <property name="firstName" value="Parameswari"></property>
+        <property name="middleName"  value=""></property>
+        <property name="lastName" value="Parameswari"></property>
+    </bean>
 
+<bean id="dob" class="java.util.Date">
+ <constructor-arg index="0" value="70"></constructor-arg>
+    <constructor-arg index="1" value="11"></constructor-arg>
+    <constructor-arg index="2" value="2"></constructor-arg>
 </bean>
+-->
 <!--
 <bean id="employee" class="com.hsbc.models.Employee"  parent="person">
 
