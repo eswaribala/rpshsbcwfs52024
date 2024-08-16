@@ -1,5 +1,6 @@
 package com.hsbc.models;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
+import jakarta.annotation.PreDestroy;
 @Configuration
 @Import(DiagnosisConfig.class)
 public class Diagnosis implements InitializingBean,BeanFactoryAware{
@@ -30,6 +32,14 @@ public class Diagnosis implements InitializingBean,BeanFactoryAware{
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         System.out.println(beanFactory.getBean("diagnosis"));
     }
+
+
+    @PreDestroy
+    public void beforeDestroy(){
+           System.out.println("Bean about to be removed, " +
+                   "close all the files and db....");
+    }
+
 
 
 }

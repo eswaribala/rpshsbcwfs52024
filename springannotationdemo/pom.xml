@@ -36,6 +36,12 @@
             <version>6.1.11</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
 
 
     </dependencies>
