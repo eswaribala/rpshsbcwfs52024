@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-@Component
+
 public class Person {
     protected long personId;
     protected FullName fullName;

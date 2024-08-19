@@ -51,11 +51,6 @@
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
             </svg>SignUp</a>
-            <a id="reports" class="anchor" th:href="@{/reports}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-            </svg>&nbsp;Report</a>
 
         </article>
     </article>
@@ -63,39 +58,29 @@
 </section>
 
 <section>
-    <form class="container-fluid p-2 " id="customerForm"  onsubmit="return false"  style="width: 50%;background-color:aliceblue">
-       <fieldset >
-           <legend style="text-align: center;font-weight:bold;color: blue">Customer Login</legend>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Employee code</th>
+            <th>Designation</th>
+            <th>Salary</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.employeeCode}"></td>
+            <td th:text="${employee.designation}"></td>
+            <td th:text="${employee.salary}"></td>
 
-           <div class="mb-3">
-               <label for="email" class="form-label">
-                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-arrow-up-fill" viewBox="0 0 16 16">
-                       <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zm.192 8.159 6.57-4.027L8 9.586l1.239-.757.367.225A4.49 4.49 0 0 0 8 12.5c0 .526.09 1.03.256 1.5H2a2 2 0 0 1-1.808-1.144M16 4.697v4.974A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-1.965.45l-.338-.207z"/>
-                       <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.354-5.354 1.25 1.25a.5.5 0 0 1-.708.708L13 12.207V14a.5.5 0 0 1-1 0v-1.717l-.28.305a.5.5 0 0 1-.737-.676l1.149-1.25a.5.5 0 0 1 .722-.016"/>
-                   </svg>
-                   Email address
-               </label>
-               <input type="email" class="form-control" placeholder="rajeev@gmail.com" id="email" aria-describedby="emailHelp">
-               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-           </div>
-           <div class="mb-3">
-               <label for="password" class="form-label">
-                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
-                       <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8m4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5"/>
-                       <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-                   </svg>
-                   Password</label>
-               <input type="password" class="form-control" placeholder="Test@123" id="password">
-           </div>
+        </tr>
+        <tr>
+            <td th:text="${employee.employeeCode}"></td>
+            <td th:text="${employee.designation}"></td>
+            <td th:text="${employee.salary}"></td>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-       </fieldset>
-    </form>
-    <datalist id="genderList">
-        <option>MALE</option>
-        <option>FEMALE</option>
-        <option>TRANSGENDER</option>
-    </datalist>
+        </tr>
+        </tbody>
+    </table>
 
 </section>
 

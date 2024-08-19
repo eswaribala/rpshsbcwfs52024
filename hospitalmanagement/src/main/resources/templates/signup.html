@@ -37,8 +37,8 @@
                 </ul>
             </li>
 
-            <form class="d-flex p-2">
-                <input class="form-control me-50"type="search" style="width:500px;height: 50px;" placeholder="Search" aria-label="Search">
+            <form class="d-flex p-2" method="post" th:action="@{/employeeById}" th:object="${employee}">
+                <input class="form-control me-50"type="search" th:field="*{employeeCode}" style="width:500px;height: 50px;" placeholder="Search" aria-label="Search">
                 <button class="btn bg-success" style="height: 50px;" type="submit">Search</button>
             </form>
         </ul>
@@ -55,7 +55,7 @@
 </section>
 
 <section>
-    <form class="container-fluid p-2 " id="customerForm"  onsubmit="return false"  style="width: 50%;background-color:aliceblue">
+    <form class="container-fluid p-2 " method="post" th:action="@{/save}" th:object="${employeeRequest}" style="width: 50%;background-color:aliceblue">
        <fieldset >
            <legend style="text-align: center;font-weight:bold;color: blue">Customer Signup</legend>
         <div class="mb-3">
@@ -74,7 +74,7 @@
                    </svg>
                    Middle Name
                </label>
-               <input type="text" class="form-control" th:field="*{middleName}" placeholder="middle name" required pattern="[A-Za-z]{5,25}">
+               <input type="text" class="form-control" th:field="*{middleName}" placeholder="middle name" >
            </div>
            <div class="mb-3">
                <label for="lastName" class="form-label">
@@ -112,8 +112,8 @@
                    </svg>
                    Salary
                </label>
-               <input type="number" class="form-control" th:field="*{salary}" aria-describedby="emailHelp">
-               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+               <input type="number" class="form-control" th:field="*{salary}" >
+
            </div>
 
            <div class="mb-3 form-check">
