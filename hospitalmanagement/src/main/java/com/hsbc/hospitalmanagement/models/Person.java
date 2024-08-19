@@ -18,14 +18,7 @@ import java.time.LocalDate;
 @Component
 public class Person {
     protected long personId;
-    //autowiring @ field level
-    @Autowired(required = false)
-    @Qualifier("fullName1")
-    protected FullName senderName;
-
-    @Autowired(required = false)
-    @Qualifier("fullName2")
-    protected FullName receiverName;
+    protected FullName fullName;
    // @Autowired
     protected LocalDate dob;
 
