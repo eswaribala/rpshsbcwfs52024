@@ -1,6 +1,7 @@
 package com.hsbc.hospitalmanagement.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.hsbc.hospitalmanagement.dtos.EmployeeRequest;
 import com.hsbc.hospitalmanagement.services.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,8 @@ public class SignupController {
     public String loadSignUp(Model model)  {
         model.addAttribute("countryNames",
                 countryService.getCountryNames());
+        model.addAttribute("employeeRequest",
+                new EmployeeRequest());
         return "signup.html";
     }
 }
