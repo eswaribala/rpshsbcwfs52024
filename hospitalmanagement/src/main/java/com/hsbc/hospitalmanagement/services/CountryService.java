@@ -23,13 +23,14 @@ public class CountryService {
     @Value("${countryUrl}")
     private String countryUrl;
 
-    public List<String> getCountryNames() throws NoSuchFieldException, IllegalAccessException {
+    public List<String> getCountryNames() {
 
        ResponseEntity responseEntity =restTemplate.getForEntity(countryUrl,
                List.class);
        List<Object> countriesList= (List<Object>) responseEntity.getBody();
        List<String> countryNames=new ArrayList<>();
        JSONObject jsonObject=null;
+
        for(Object object : countriesList){
            jsonObject=new JSONObject((Map)object);
            //System.out.println(jsonObject.get("name"));

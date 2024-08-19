@@ -34,9 +34,10 @@
 
             <li class="nav-item dropdown dropdown d-flex p-3" style="height: 80px;">
                 <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Deliver To</a>
-                <ul id="countryItems" class="dropdown-menu"  th:each="countryName : ${countryNames}" >
+                <ul id="countryItems" class="dropdown-menu"  >
                     <li><a class="dropdown-item" href="#">Viman Nagar</a></li>
-                    <li th:text="${countryName}"></li>
+                    <li th:each="countryName : ${countryNames}" th:text="${countryName}">
+
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#">Separated link</a></li>
                 </ul>

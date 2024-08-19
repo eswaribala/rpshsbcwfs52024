@@ -1,5 +1,6 @@
 package com.hsbc.hospitalmanagement.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.hsbc.hospitalmanagement.services.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +15,7 @@ public class HomeController {
     private CountryService countryService;
 
     @GetMapping("/home")
-    public String loadHome(Model model) throws NoSuchFieldException, IllegalAccessException {
+    public String loadHome(Model model)  {
 
         model.addAttribute("countryNames",
                 countryService.getCountryNames());
