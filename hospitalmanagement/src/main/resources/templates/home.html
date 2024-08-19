@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- Thymeleaf view resolver-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HSBCMEDS</title>
+    <!-- Bootstrap CSS -->
+    <link href="lib/bootstrap-5.0.2-dist/css/bootstrap.min.css"
+          rel="stylesheet" crossorigin="anonymous">
+    <script type="text/javascript" src="lib/@popperjs/core/dist/umd/popper.min.js"  crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script type="text/javascript" src="lib/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"  crossorigin="anonymous"></script>
+
+
+    <link type="text/css" rel="stylesheet" href="css/index.css"/>
+
+
+</head>
+<body>
+<header  class="container-fluid p-3 mb-0  text-dark" style="background-color: black">
+    <h1>Global Hospital</h1>
+</header>
+<section class="container-fluid p-3 mb-2 bg-primary text-dark"
+         style="height: 150px;">
+
+    <article style="display: flex;justify-content: space-evenly" class="container-fluid  bg-primary text-dark" >
+        <figure  class="p-3" style="align-items: center">
+            <img src="images/logo.jpeg"
+                 style="width: 70px;height:70px;
+                 border-radius: 50px 50px 50px 50px">
+        </figure>
+        <ul class="nav nav-tabs" style="align-items: center;justify-content: space-evenly" >
+
+            <li class="nav-item dropdown dropdown d-flex p-3" style="height: 80px;">
+                <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Deliver To</a>
+                <ul id="countryItems" class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Viman Nagar</a></li>
+
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </li>
+
+            <form class="d-flex p-2">
+                <input class="form-control me-50"type="search" style="width:500px;height: 50px;" placeholder="Search" aria-label="Search">
+                <button class="btn bg-success" style="height: 50px;" type="submit">Search</button>
+            </form>
+        </ul>
+
+        <article class="container-fluid p-3 m-3" style="width:300px; justify-content: space-evenly">
+
+            <a id="signIn" class="anchor" th:href="@{/signin}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                </svg>&nbsp;SignIn</a>
+            <a id="signUp" class="anchor"  th:href="@{/signup}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                </svg>
+                SignUp
+            </a>
+        </article>
+    </article>
+
+</section>
+<section style="width: 50%;margin-left: 25%;">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div id="carouselExampleCaptionsinner" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/slide3.jpeg" class="d-block w-100" alt="...">
+
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slide4.jpeg" class="d-block w-100" alt="...">
+
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slide5.jpeg" class="d-block w-100" alt="...">
+
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slide2.jpeg" class="d-block w-100" alt="...">
+
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slide1.jpeg" class="d-block w-100" alt="...">
+
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
