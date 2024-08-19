@@ -29,13 +29,14 @@
                  style="width: 70px;height:70px;
                  border-radius: 50px 50px 50px 50px">
         </figure>
-        <ul class="nav nav-tabs" style="align-items: center;justify-content: space-evenly" >
+        <ul class="nav nav-tabs" style="align-items: center;justify-content: space-evenly"
+            >
 
             <li class="nav-item dropdown dropdown d-flex p-3" style="height: 80px;">
                 <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Deliver To</a>
-                <ul id="countryItems" class="dropdown-menu">
+                <ul id="countryItems" class="dropdown-menu"  th:each="countryName : ${countryNames}" >
                     <li><a class="dropdown-item" href="#">Viman Nagar</a></li>
-
+                    <li th:text="${countryName}"></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#">Separated link</a></li>
                 </ul>
