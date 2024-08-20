@@ -40,8 +40,8 @@
                 </ul>
             </li>
 
-            <form class="d-flex p-2" method="post" th:action="@{/employeeById}" th:object="${employee}">
-                <input class="form-control me-50"type="search" th:field="*{employeeCode}" style="width:500px;height: 50px;" placeholder="Search" aria-label="Search">
+            <form class="d-flex p-2" method="post" >
+                <input class="form-control me-50"type="search"  style="width:500px;height: 50px;" placeholder="Search" aria-label="Search">
                 <button class="btn bg-success" style="height: 50px;" type="submit">Search</button>
             </form>
         </ul>

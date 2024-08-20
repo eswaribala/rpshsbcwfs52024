@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Optional;
+
 @Controller
 public class ReportsController {
     @Autowired
@@ -33,9 +35,13 @@ public class ReportsController {
     @PostMapping("/employeeById")
     public String loadEmployeeById(@ModelAttribute("employee") Employee employee, Model model)  {
 
-        model.addAttribute("employee",
-                employeeService.getEmployeeById(employee.getEmployeeCode()));
-        return "reports.html";
+       Optional<Employee> optional=employeeService
+               .getEmployeeById(employee.getEmployeeCode());
+       if(optional.isPresent()) {
+           model.addAttribute("employee", optional.get());
+           return "reports.html";
+       }else
+           return "redirect:/home";
     }
 
 }

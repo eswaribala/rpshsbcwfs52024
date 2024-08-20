@@ -8,16 +8,22 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private JdbcClient jdbcClient;
+
     @Value("${addPerson}")
     private String addPersonQuery;
     @Value("${addEmployee}")
@@ -69,9 +75,13 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public Employee getEmployeeById(long employeeCode) {
-        return (Employee) jdbcTemplate.queryForObject(getEmployeeQuery, new Object[]{employeeCode},
-                new BeanPropertyRowMapper(Employee.class));
+    public Optional<Employee> getEmployeeById(long employeeCode) {
+
+        return jdbcClient.sql(getEmployeeQuery).param("employeeCode",employeeCode)
+                .query(Employee.class).optional();
+
+       // return (Employee) jdbcTemplate.queryForObject(getEmployeeQuery, new Object[]{employeeCode},
+         //       new BeanPropertyRowMapper(Employee.class));
     }
 
     @Override
