@@ -21,17 +21,16 @@ public class UserServiceImpl implements UserService{
     @Value("${allUsersUrl}")
     private String allUsersUrl;
     @Override
-    public User addUser(String name, String job) {
-        JSONObject jo = new JSONObject();
-        jo.put("name", name);
-        jo.put("job", job);
+    public String addUser(String name, String job) {
+        User user=new User();
+        user.setName(name);
+        user.setJob(job);
 
        return restClient.post()
                 .uri(userUrl)
-                .contentType(APPLICATION_JSON)
-                .body(jo)
+                .body(user)
                 .retrieve()
-                .body(User.class);
+                .body(String.class);
 
     }
 
