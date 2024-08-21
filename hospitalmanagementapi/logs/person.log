@@ -1,0 +1,36 @@
+2024-08-21 11:59:33,303 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 11400 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 11:59:33,304 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 11:59:33,305 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 11:59:42,769 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 9.896 seconds (process running for 11.116)
+2024-08-21 12:02:51,550 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 70840 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 12:02:51,552 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 12:02:51,552 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 12:02:59,893 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 8.715 seconds (process running for 9.846)
+2024-08-21 12:03:26,786 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-1] Entering Add Person method......
+2024-08-21 12:03:26,792 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-1] Add Person method receives the following valuesPerson(personId=0, fullName=FullName(firstName=Shubham, middleName=, lastName=Gill), dob=1996-08-23, gender=MALE)
+2024-08-21 12:03:26,914 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-1] Exiting Add Person method......
+2024-08-21 12:03:26,914 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-1] Add Person method created new object....Person(personId=8, fullName=FullName(firstName=Shubham, middleName=, lastName=Gill), dob=1996-08-23, gender=MALE)
+2024-08-21 12:10:58,528 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 70840 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 12:10:58,529 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 12:10:58,529 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 12:11:01,427 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 2.954 seconds (process running for 491.38)
+2024-08-21 12:11:02,874 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 70840 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 12:11:02,874 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 12:11:02,874 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 12:11:04,830 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 1.976 seconds (process running for 494.783)
+2024-08-21 12:12:34,808 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 70840 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 12:12:34,808 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 12:12:34,808 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 12:12:37,247 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 2.468 seconds (process running for 587.2)
+2024-08-21 12:12:38,745 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 70840 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 12:12:38,746 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 12:12:38,746 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 12:12:41,297 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 2.59 seconds (process running for 591.25)
+2024-08-21 12:14:07,256 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 41008 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 12:14:07,258 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 12:14:07,258 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 12:14:16,528 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 9.658 seconds (process running for 10.73)
+2024-08-21 12:14:41,746 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-1] Entering Add Person method......
+2024-08-21 12:14:41,758 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-1] Add Person method receives the following valuesPerson(personId=0, fullName=FullName(firstName=Devan, middleName=, lastName=Gill), dob=1997-08-23, gender=MALE)
+2024-08-21 12:14:41,823 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-1] Exiting Add Person method......
+2024-08-21 12:14:41,824 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-1] Add Person method created new object....Person(personId=9, fullName=FullName(firstName=Devan, middleName=, lastName=Gill), dob=1997-08-23, gender=MALE)
