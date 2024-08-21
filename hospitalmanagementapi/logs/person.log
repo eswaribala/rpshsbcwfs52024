@@ -34,3 +34,11 @@
 2024-08-21 12:14:41,758 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-1] Add Person method receives the following valuesPerson(personId=0, fullName=FullName(firstName=Devan, middleName=, lastName=Gill), dob=1997-08-23, gender=MALE)
 2024-08-21 12:14:41,823 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-1] Exiting Add Person method......
 2024-08-21 12:14:41,824 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-1] Add Person method created new object....Person(personId=9, fullName=FullName(firstName=Devan, middleName=, lastName=Gill), dob=1997-08-23, gender=MALE)
+2024-08-21 12:20:04,999 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 74292 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 12:20:05,000 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 12:20:05,001 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 12:20:15,154 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 10.698 seconds (process running for 11.812)
+2024-08-21 12:20:33,086 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-5] Data Received asPerson(personId=6, fullName=FullName(firstName=Balasubramaniam, middleName=, lastName=Manickamuthu), dob=1965-08-21, gender=MALE)
+2024-08-21 12:20:33,087 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-5] Data Received asPerson(personId=7, fullName=FullName(firstName=Shubham, middleName=, lastName=Yadav), dob=1996-08-21, gender=MALE)
+2024-08-21 12:20:33,087 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-5] Data Received asPerson(personId=8, fullName=FullName(firstName=Shubham, middleName=, lastName=Gill), dob=1996-08-23, gender=MALE)
+2024-08-21 12:20:33,087 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-5] Data Received asPerson(personId=9, fullName=FullName(firstName=Devan, middleName=, lastName=Gill), dob=1997-08-23, gender=MALE)
