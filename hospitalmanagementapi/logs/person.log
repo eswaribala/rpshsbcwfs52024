@@ -42,3 +42,19 @@
 2024-08-21 12:20:33,087 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-5] Data Received asPerson(personId=7, fullName=FullName(firstName=Shubham, middleName=, lastName=Yadav), dob=1996-08-21, gender=MALE)
 2024-08-21 12:20:33,087 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-5] Data Received asPerson(personId=8, fullName=FullName(firstName=Shubham, middleName=, lastName=Gill), dob=1996-08-23, gender=MALE)
 2024-08-21 12:20:33,087 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-5] Data Received asPerson(personId=9, fullName=FullName(firstName=Devan, middleName=, lastName=Gill), dob=1997-08-23, gender=MALE)
+2024-08-21 13:57:31,559 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 76660 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 13:57:31,560 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 13:57:31,561 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 13:57:38,673 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 7.475 seconds (process running for 8.385)
+2024-08-21 13:58:03,487 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-5] Data Received asPerson(personId=6, fullName=FullName(firstName=Balasubramaniam, middleName=, lastName=Manickamuthu), dob=1965-08-21, gender=MALE)
+2024-08-21 13:58:03,487 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-5] Data Received asPerson(personId=7, fullName=FullName(firstName=Shubham, middleName=, lastName=Yadav), dob=1996-08-21, gender=MALE)
+2024-08-21 13:58:03,488 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-5] Data Received asPerson(personId=8, fullName=FullName(firstName=Shubham, middleName=, lastName=Gill), dob=1996-08-23, gender=MALE)
+2024-08-21 13:58:03,488 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-5] Data Received asPerson(personId=9, fullName=FullName(firstName=Devan, middleName=, lastName=Gill), dob=1997-08-23, gender=MALE)
+2024-08-21 14:00:43,247 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 76660 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 14:00:43,247 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 14:00:43,247 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 14:00:46,743 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 3.536 seconds (process running for 196.455)
+2024-08-21 14:00:48,316 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 76660 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 14:00:48,316 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 14:00:48,317 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 14:00:50,945 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 2.678 seconds (process running for 200.657)
