@@ -58,3 +58,23 @@
 2024-08-21 14:00:48,316 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
 2024-08-21 14:00:48,317 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
 2024-08-21 14:00:50,945 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 2.678 seconds (process running for 200.657)
+2024-08-21 14:49:16,776 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 77060 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 14:49:16,779 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 14:49:16,780 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 14:49:33,716 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 17.547 seconds (process running for 19.449)
+2024-08-21 14:49:40,008 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 77060 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 14:49:40,009 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 14:49:40,009 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 14:49:47,243 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 7.302 seconds (process running for 32.975)
+2024-08-21 14:50:02,767 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 76692 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 14:50:02,769 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 14:50:02,770 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 14:50:20,000 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 18.009 seconds (process running for 20.028)
+2024-08-21 14:56:47,127 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 39252 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 14:56:47,128 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 14:56:47,130 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 14:56:54,724 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 7.962 seconds (process running for 8.88)
+2024-08-21 15:07:10,811 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 79716 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-21 15:07:10,813 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-21 15:07:10,813 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-21 15:07:20,168 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 9.749 seconds (process running for 10.688)
