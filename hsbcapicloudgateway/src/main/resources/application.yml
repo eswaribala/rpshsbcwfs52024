@@ -1,0 +1,34 @@
+server:
+  port: 8765
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+spring:
+  application:
+    name: gateway
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: HOSPITALMANAGEMENT-API
+          uri: lb://HOSPITALMANAGEMENT-API
+          predicates:
+            - Path=/persons/v1.0/**
+      discovery:
+        locator:
+          enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
