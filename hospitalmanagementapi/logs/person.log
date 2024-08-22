@@ -185,3 +185,55 @@
 2024-08-21 22:04:32,891 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-3] Data Received asPerson(personId=7, fullName=FullName(firstName=Shubham, middleName=, lastName=Yadav), dob=1996-08-21, gender=MALE)
 2024-08-21 22:04:32,891 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-3] Data Received asPerson(personId=8, fullName=FullName(firstName=Shubham, middleName=, lastName=Gill), dob=1996-08-23, gender=MALE)
 2024-08-21 22:04:32,891 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-3] Data Received asPerson(personId=9, fullName=FullName(firstName=Devan, middleName=, lastName=Gill), dob=1997-08-23, gender=MALE)
+2024-08-22 10:53:51,546 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 36952 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 10:53:51,548 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 10:53:51,549 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 10:54:01,173 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 10.178 seconds (process running for 12.067)
+2024-08-22 10:54:09,882 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 36952 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 10:54:09,883 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 10:54:09,883 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 10:54:13,543 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 3.723 seconds (process running for 24.437)
+2024-08-22 10:54:17,839 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 36952 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 10:54:17,839 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 10:54:17,839 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 10:54:21,550 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 3.74 seconds (process running for 32.444)
+2024-08-22 10:57:40,343 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-2] Data Received asPerson(personId=6, fullName=FullName(firstName=Balasubramaniam, middleName=, lastName=Manickamuthu), dob=1965-08-21, gender=MALE)
+2024-08-22 10:57:40,343 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-2] Data Received asPerson(personId=7, fullName=FullName(firstName=Shubham, middleName=, lastName=Yadav), dob=1996-08-21, gender=MALE)
+2024-08-22 10:57:40,343 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-2] Data Received asPerson(personId=8, fullName=FullName(firstName=Shubham, middleName=, lastName=Gill), dob=1996-08-23, gender=MALE)
+2024-08-22 10:57:40,344 INFO c.h.h.s.PersonServiceAspect [http-nio-7074-exec-2] Data Received asPerson(personId=9, fullName=FullName(firstName=Devan, middleName=, lastName=Gill), dob=1997-08-23, gender=MALE)
+2024-08-22 11:17:03,648 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 52208 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 11:17:03,650 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 11:17:03,651 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 11:17:12,906 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 9.774 seconds (process running for 11.153)
+2024-08-22 11:20:17,680 INFO c.h.h.HospitalmanagementapiApplicationTests [main] Starting HospitalmanagementapiApplicationTests using Java 21.0.4 with PID 78476 (started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 11:20:17,687 DEBUG c.h.h.HospitalmanagementapiApplicationTests [main] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 11:20:17,688 INFO c.h.h.HospitalmanagementapiApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 11:20:32,389 INFO c.h.h.HospitalmanagementapiApplicationTests [main] Started HospitalmanagementapiApplicationTests in 15.223 seconds (process running for 17.413)
+2024-08-22 11:22:39,183 INFO c.h.h.HospitalmanagementapiApplicationTests [main] Starting HospitalmanagementapiApplicationTests using Java 21.0.4 with PID 75564 (started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 11:22:39,186 DEBUG c.h.h.HospitalmanagementapiApplicationTests [main] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 11:22:39,187 INFO c.h.h.HospitalmanagementapiApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 11:22:54,072 INFO c.h.h.HospitalmanagementapiApplicationTests [main] Started HospitalmanagementapiApplicationTests in 15.649 seconds (process running for 17.841)
+2024-08-22 11:23:05,157 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 61700 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 11:23:05,159 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 11:23:05,160 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 11:23:14,646 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 10.146 seconds (process running for 11.489)
+2024-08-22 11:27:59,602 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 81288 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 11:27:59,603 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 11:27:59,604 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 11:28:08,966 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 9.889 seconds (process running for 11.12)
+2024-08-22 11:28:34,363 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 25668 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 11:28:34,364 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 11:28:34,365 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 11:28:47,324 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 13.444 seconds (process running for 14.779)
+2024-08-22 11:30:39,065 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 65384 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 11:30:39,067 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 11:30:39,068 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 11:30:47,712 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 9.311 seconds (process running for 10.706)
+2024-08-22 11:31:33,711 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 1940 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 11:31:33,712 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 11:31:33,713 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 11:31:44,237 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 10.99 seconds (process running for 12.331)
+2024-08-22 11:32:05,060 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Starting HospitalmanagementapiApplication using Java 21.0.4 with PID 66508 (E:\hsbc2024ws\hospitalmanagementapi\target\classes started by Dell in E:\hsbc2024ws\hospitalmanagementapi)
+2024-08-22 11:32:05,062 DEBUG c.h.h.HospitalmanagementapiApplication [restartedMain] Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-22 11:32:05,063 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-08-22 11:32:14,726 INFO c.h.h.HospitalmanagementapiApplication [restartedMain] Started HospitalmanagementapiApplication in 10.289 seconds (process running for 11.646)
