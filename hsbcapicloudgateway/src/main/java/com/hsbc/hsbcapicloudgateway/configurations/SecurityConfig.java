@@ -1,4 +1,4 @@
-package com.hsbc.hospitalmanagementapi.configurations;
+package com.hsbc.hsbcapicloudgateway.configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,15 +8,21 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
+import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.core.userdetails.MapReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.server.SecurityWebFilterChain;
+
+import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
-@EnableWebSecurity
+@EnableWebFluxSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
 
@@ -27,7 +33,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public UserDetailsService userDetailsService(){
+    public MapReactiveUserDetailsService userDetailsService() {
         UserDetails user1 = User.builder()
                 .username("eswari")
                 .password(bCryptPasswordEncoder().encode("1234"))
@@ -40,28 +46,16 @@ public class SecurityConfig {
                 .authorities("ROLE_ADMIN")
                 .build();
 
-        return new InMemoryUserDetailsManager(user1,admin);
+        return new MapReactiveUserDetailsService(user1,admin);
     }
-
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http)
-            throws Exception{
+    public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
         http
-                .headers(header -> header.frameOptions(HeadersConfigurer
-                        .FrameOptionsConfig::disable))
-                .csrf(AbstractHttpConfigurer::disable)
-                .formLogin(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(req ->
-                        req.requestMatchers("/public/**","/auth/**")
-                                .permitAll())
-                .authorizeHttpRequests(req ->
-                        req.requestMatchers("/persons/v1.0/**")
-                                .hasRole("USER"))
-                .authorizeHttpRequests(req -> req.requestMatchers("/**")
-                        .hasRole("ADMIN"))
-                .authorizeHttpRequests(req -> req.anyRequest().authenticated())
-                .httpBasic(Customizer.withDefaults());
-
+                .authorizeExchange(exchanges -> exchanges
+                        .anyExchange().authenticated()
+                )
+                .httpBasic(withDefaults())
+                .formLogin(withDefaults());
         return http.build();
     }
 }

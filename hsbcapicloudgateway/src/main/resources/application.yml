@@ -15,6 +15,7 @@ spring:
     name: gateway
   main:
     web-application-type: reactive
+
   cloud:
     gateway:
       routes:
