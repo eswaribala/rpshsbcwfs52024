@@ -1,1 +1,10 @@
 .Timer {}
+
+.multicolortext {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: "Lucida Calligraphy";
+    margin-right: 25%;
+    padding: 2%;
+}
