@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import styles from './Login.module.css';
 import {Box, Button, FormControl, Input, InputAdornment, InputLabel, TextField} from "@mui/material";
@@ -6,7 +6,22 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import {Email, Lock} from "@mui/icons-material";
 import {useFormik} from "formik";
 import * as yup from 'yup';
+import axios from "axios";
+import {Url} from '../../configurations/appconfig'
 function Login(){
+
+  //define userInput State Hook
+  //const[userInput, setUserInput]=useState('');
+  const[value,setValue]=useState('');
+
+    useEffect((value) => {
+        setValue(value)
+    }, [value]);
+
+
+
+
+
 
  const validationSchema=yup.object({
     email:yup.string("Enter Email Address")
@@ -14,7 +29,7 @@ function Login(){
         .required("Must give Email"),
     password: yup.string("Enter Password")
         .min(4,"Minimum 4 Characters")
-        .max(8,"Maximum 8 Characters")
+        .max(10,"Maximum 10 Characters")
         .required("Must Enter Password")
 
  })
@@ -23,14 +38,22 @@ function Login(){
  const formik=useFormik({
 
      initialValues:{
-         email:"sample@gmail.com",
-         password:"Test@123"
+         email:"eve.holt@reqres.in",
+         password:"cityslicka"
      },
 
      validationSchema:validationSchema,
 
     onSubmit:(values)=>{
-          alert(values);
+          console.log(values.email+","+values.password);
+         let data={
+              "email":values.email,
+              "password":values.password
+          }
+          axios.post(Url,data).then(response=>{
+              console.log(response.data.token);
+          })
+
     }
 
  })
@@ -39,7 +62,7 @@ function Login(){
 
     return(
         <Box sx={{ '& > :not(style)': { m: 1 } }}>
-            <form>
+            <form onSubmit={formik.handleSubmit}>
             <TextField
                 id="email"
                 type="email"
@@ -47,6 +70,7 @@ function Login(){
                 label="Email"
                 value={formik.values.email}
                 onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
                 error={formik.errors.email && Boolean(formik.errors.email)}
                 helperText={formik.touched.email && formik.errors.email}
 
@@ -68,6 +92,7 @@ function Login(){
                 label="Password"
                 value={formik.values.password}
                 onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
                 error={formik.errors.password && Boolean(formik.errors.password)}
                 helperText={formik.touched.password && formik.errors.password}
                 InputProps={{
@@ -81,7 +106,7 @@ function Login(){
                 margin="dense"
             />
 
-            <Button variant="contained"  size="large" >
+            <Button type="submit" variant="contained"  size="large" >
                 Login
             </Button>
             </form>
