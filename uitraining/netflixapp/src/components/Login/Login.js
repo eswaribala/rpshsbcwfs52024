@@ -8,7 +8,7 @@ import {useFormik} from "formik";
 import * as yup from 'yup';
 import axios from "axios";
 import {Url} from '../../configurations/appconfig'
-function Login(){
+const Login=({signupStatus})=>{
 
   //define userInput State Hook
   //const[userInput, setUserInput]=useState('');
@@ -19,7 +19,9 @@ function Login(){
     }, [value]);
 
 
-
+function handleSignUpStatus(){
+    signupStatus(true);
+}
 
 
 
@@ -63,6 +65,8 @@ function Login(){
     return(
         <Box sx={{ '& > :not(style)': { m: 1 } }}>
             <form onSubmit={formik.handleSubmit}>
+            <fieldset>
+            <legend className={styles.legend}>Customer Login</legend>
             <TextField
                 id="email"
                 type="email"
@@ -109,7 +113,11 @@ function Login(){
             <Button type="submit" variant="contained"  size="large" >
                 Login
             </Button>
+            </fieldset>
             </form>
+           <p className={styles.p}> New User?
+               <a href="#" onClick={handleSignUpStatus}>Signup</a>
+           </p>
         </Box>
     )
 
