@@ -5,7 +5,7 @@ import {Box, Button, FormControl, Input, InputAdornment, InputLabel, TextField} 
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import {Email, Lock} from "@mui/icons-material";
 import {useFormik} from "formik";
-import yup from 'yup';
+import * as yup from 'yup';
 function Login(){
 
  const validationSchema=yup.object({
