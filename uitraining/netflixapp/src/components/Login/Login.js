@@ -66,6 +66,10 @@ function Login(){
                 type="password"
                 fullWidth
                 label="Password"
+                value={formik.values.password}
+                onBlur={formik.handleBlur}
+                error={formik.errors.password && Boolean(formik.errors.password)}
+                helperText={formik.touched.password && formik.errors.password}
                 InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
