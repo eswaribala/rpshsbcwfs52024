@@ -19,10 +19,9 @@ const Comedy = () => {
         axios.get(movieUrl).then(res=>{
          //  alert("received response....");
 
-            res.data.map((obj)=>{
-                console.log(obj.title);
-            })
-            setResponse(res.data);
+          let filteredData= res.data.filter(item=>(item.genre.includes('Fantasy')));
+            console.log(filteredData)
+            setResponse(filteredData);
         })
     }
 
@@ -31,12 +30,12 @@ const Comedy = () => {
   <div >
       {(response.length>0) &&(
               <div>
-                  <ImageList sx={{ width: 2000, height: 800 }}>
+                  <ImageList sx={{ width: 1500, height: 800, marginLeft:20}}>
                       {response.map((item) => (
                           <ImageListItem key={item.id}>
                               <img
-                                  srcSet={`${item.poster}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                                  src={`${item.poster}?w=248&fit=crop&auto=format`}
+                                  srcSet={`${item.poster}?w=50&h=50`}
+                                  src={`${item.poster}?w=50&h=50`}
                                   alt={item.title}
                                   loading="lazy"
                               />
