@@ -1,13 +1,24 @@
 import React, {useState} from 'react';
 import styles from './HomeMenu.module.css';
-import {Box, Link, Tab, Tabs} from "@mui/material";
+import {Box, createTheme, Tab, Tabs, ThemeProvider} from "@mui/material";
 import TabPanel from '@mui/lab/TabPanel';
 import {TabContext, TabList} from "@mui/lab";
-import {Route, Routes, useLocation} from "react-router-dom";
+import {Route, Routes, useLocation,Link} from "react-router-dom";
 import Action from "../Action/Action";
 import Comedy from "../Comedy/Comedy";
 import ScienceFiction from "../ScienceFiction/ScienceFiction";
-
+const theme = createTheme({
+    components: {
+        // Name of the component ⚛️
+       MuiTab:{
+           styleOverrides:{
+               textColorSecondary:{
+                   backgroundColor: "blueviolet"
+               }
+           }
+       }
+    },
+});
 const HomeMenu = () => {
 
    /* const [value,setValue]=useState('1');
@@ -20,17 +31,18 @@ const HomeMenu = () => {
 
     return(
         <div className={styles.HomeMenu}>
+
             <Box sx={{ color:'black', marginLeft:'30%', fontWeight:'bold', justifyContent:'center',width: 1000 }}>
-            <TabContext value={pathName} >
+            <TabContext value={pathName}>
                     <Tabs value={pathName}
                           TabIndicatorProps={{
                               sx: {
-                                  backgroundColor: 'red',
+                                  backgroundColor:'coral'
                               },
-                          }} centered>
-                        <Tab label="Comedy"  component={Link} to="/comedy" value="/comedy" />
-                        <Tab label="Action" component={Link} to="/action" value="/action" />
-                        <Tab label="Science Fiction" component={Link} to="/sciencefiction" value="/sciencefiction" />
+                          }}  centered>
+                        <Tab sx={{color:'black',bgcolor:'red', fontSize:'large',fontWeight:'bold' }} label="Comedy"  component={Link} to="/comedy" value="/comedy" />
+                        <Tab sx={{color:'black',bgcolor:'red', fontSize:'large',fontWeight:'bold' }} label="Action" component={Link} to="/action" value="/action" />
+                        <Tab sx={{color:'black',bgcolor:'red', fontSize:'large',fontWeight:'bold' }} label="Science Fiction" component={Link} to="/sciencefiction" value="/sciencefiction" />
                     </Tabs>
 
 
