@@ -9,6 +9,7 @@ const Comedy = () => {
 
     const[response,setResponse]=useState([]);
     useEffect(() => {
+        //only once
           fetchMovies();
         //console.log(response)
     }, []);
@@ -30,7 +31,7 @@ const Comedy = () => {
   <div >
       {(response.length>0) &&(
               <div>
-                  <ImageList sx={{ width: 500, height: 450 }}>
+                  <ImageList sx={{ width: 2000, height: 800 }}>
                       {response.map((item) => (
                           <ImageListItem key={item.id}>
                               <img
