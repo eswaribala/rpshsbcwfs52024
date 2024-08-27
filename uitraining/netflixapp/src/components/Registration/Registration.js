@@ -1,5 +1,5 @@
-import  react from 'react'
-import {Button, InputLabel, MenuItem, Select, TextField} from "@mui/material";
+import react, {useState} from 'react'
+import {Alert, Button, InputLabel, MenuItem, Select, Snackbar, TextField} from "@mui/material";
 import {useFormik} from "formik";
 import * as yup from 'yup'
 import styles from "../Login/Login.module.css";
@@ -8,6 +8,8 @@ import {registrationUrl} from "../../configurations/appconfig";
 
 
  const Registration=({signupStatus})=>{
+
+     const [open,setOpen]=useState(false)
 
     const validationSchema=yup.object({
         name:yup.string("Enter Name")
@@ -21,6 +23,14 @@ import {registrationUrl} from "../../configurations/appconfig";
 
     })
 
+     const[jobValue,setJobValue]=useState('Developer');
+     function handleChange(pointer){
+
+        //alert(pointer.target.value);
+         setJobValue(pointer.target.value);
+     }
+
+
     const formik=useFormik({
         initialValues:{
             name:"Test",
@@ -29,14 +39,19 @@ import {registrationUrl} from "../../configurations/appconfig";
         },
         validationSchema:validationSchema,
         onSubmit:(values)=>{
-            alert(values.name+","+values.job+","+values.dob);
+            console.log(values.name+","+values.job+","+values.dob);
              let data={
                  "name":values.name,
-                 "job":"leader"
+                 "job":jobValue
              }
             axios.post(registrationUrl,data).then(response=>{
                 alert(response.data.id);
-                signupStatus(false);
+                setOpen(true);
+                setTimeout(function() { //Start the timer
+                    signupStatus(false); //After 1 second, set render to true
+                }.bind(this), 5000)
+
+
             })
 
         }
@@ -45,8 +60,33 @@ import {registrationUrl} from "../../configurations/appconfig";
 
 
 
-    return(
+
+     const handleClose = () => {
+         setOpen(false);
+     };
+
+
+     return(
         <div>
+            <Snackbar
+                open={open}
+                autoHideDuration={5000}
+                onClose={handleClose}
+                sx={{
+                    '&.MuiSnackbar-root': { top: '1%', left:'50%' }
+                }}
+            >
+                <Alert
+                    onClose={handleClose}
+                    severity="success"
+                    variant="filled"
+                    sx={{
+
+                        width: '100%'
+                    }}
+
+                > Registration Completed Successfully </Alert>
+            </Snackbar>
             <form onSubmit={formik.handleSubmit}>
                 <fieldset>
                 <legend className={styles.legend}>Customer Registration</legend>
@@ -68,9 +108,9 @@ import {registrationUrl} from "../../configurations/appconfig";
 
                         id="job"
                         fullWidth
-                        value={formik.values.job}
+                        value={jobValue}
                         label="Job"
-                       onChange={formik.handleChange}
+                       onChange={handleChange}
                         onBlur={formik.handleBlur}
                     >
                         <MenuItem value="developer">Developer</MenuItem>

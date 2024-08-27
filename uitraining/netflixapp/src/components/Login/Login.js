@@ -8,7 +8,7 @@ import {useFormik} from "formik";
 import * as yup from 'yup';
 import axios from "axios";
 import {Url} from '../../configurations/appconfig'
-const Login=({signupStatus})=>{
+const Login=({signupStatus,loginStatus})=>{
 
   //define userInput State Hook
   //const[userInput, setUserInput]=useState('');
@@ -54,6 +54,7 @@ function handleSignUpStatus(){
           }
           axios.post(Url,data).then(response=>{
               console.log(response.data.token);
+              loginStatus(true);
           })
 
     }
