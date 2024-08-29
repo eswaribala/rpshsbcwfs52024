@@ -1,0 +1,24 @@
+{
+  "name": "cicdjs2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jsondemo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "express": "^4.18.1",
+    "path": "^0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eswaribala/cicdjs2022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eswaribala/cicdjs2022/issues"
+  },
+  "homepage": "https://github.com/eswaribala/cicdjs2022#readme"
+}
