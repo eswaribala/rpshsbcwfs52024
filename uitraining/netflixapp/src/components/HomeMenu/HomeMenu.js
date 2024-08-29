@@ -7,6 +7,9 @@ import {Route, Routes, useLocation,Link} from "react-router-dom";
 import Action from "../Action/Action";
 import Comedy from "../Comedy/Comedy";
 import ScienceFiction from "../ScienceFiction/ScienceFiction";
+import App from "../../App";
+import Logout from "../Logout/Logout";
+import Login from "../Login/Login";
 const theme = createTheme({
     components: {
         // Name of the component ⚛️
@@ -32,7 +35,7 @@ const HomeMenu = () => {
     return(
         <div className={styles.HomeMenu}>
 
-            <Box sx={{ color:'black', marginLeft:'30%', fontWeight:'bold', justifyContent:'center',width: 1000 }}>
+            <Box sx={{ color:'black', marginLeft:'25%', fontWeight:'bold', justifyContent:'center',width: 1000 }}>
             <TabContext value={pathName}>
                     <Tabs value={pathName}
                           TabIndicatorProps={{
@@ -43,6 +46,7 @@ const HomeMenu = () => {
                         <Tab sx={{color:'black',bgcolor:'red', fontSize:'large',fontWeight:'bold' }} label="Comedy"  component={Link} to="/comedy" value="/comedy" />
                         <Tab sx={{color:'black',bgcolor:'red', fontSize:'large',fontWeight:'bold' }} label="Action" component={Link} to="/action" value="/action" />
                         <Tab sx={{color:'black',bgcolor:'red', fontSize:'large',fontWeight:'bold' }} label="Science Fiction" component={Link} to="/sciencefiction" value="/sciencefiction" />
+                        <Tab sx={{color:'black',bgcolor:'red', fontSize:'large',fontWeight:'bold' }} label="Logout" component={Link} to="/logout" value="/logout" />
                     </Tabs>
 
 
@@ -52,7 +56,7 @@ const HomeMenu = () => {
                 <Route path={"/action"} element={<Action/>}/>
                 <Route path={"/comedy"} element={<Comedy/>}/>
                 <Route path={"/sciencefiction"} element={<ScienceFiction/>}/>
-
+                <Route path={"/logout"} element={<Logout/>}/>
             </Routes>
 
         </div>

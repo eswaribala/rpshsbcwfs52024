@@ -38,7 +38,7 @@ function App() {
           </section>
            :
            <section>
-               <HomeMenu/>
+               <HomeMenu />
            </section>
           }
       </div>
