@@ -1,0 +1,191 @@
+Step1: To install git software in Ubuntu
+
+sudo apt-get install git
+        or
+sudo yum install git
+
+Step2: Configure git in CLI
+
+git config --global user.email "youremail@emaildomain.com"
+
+git config --global user.name "your username"
+
+ git config -l
+ 
+ Step3: Initialize git before creating local repository
+ 
+ md projectname
+ 
+ cd projectname
+ 
+ git init 
+  
+ touch helloworld.c
+  
+ git add .
+ 
+ 
+ git commit -m "First commit of project, just an empty file"
+ 
+ //adding specific file instead of all the files
+ 
+ git add helloworld.c
+ 
+ git commit -m "added source code to helloworld.c"
+ 
+ git add .
+
+ git commit -m "initial commit"
+ 
+ Step 4: Setup the remote repository  
+ git remote add origin https://gitlab.com/Parameswari/gitecommrepo.git
+ git pull origin master
+ 
+ Incase you have files from multiple local reposiory 
+ 
+ git pull origin master --allow-unrelated-histories
+ 
+ git push --force origin master
+ ==============================
+ docker login registry.gitlab.com
+
+ git remote add origin  https://github.com/eswaribala/rpsinteljenkinslab.git
+ 
+ git log
+ 
+ git clone project.url/projectname.git
+ 
+ 
+ git push
+ 
+ Steps to create branch
+ 
+ Step 1: git branch docs #create branch
+  
+ Step 2: git branch  #list branch
+ 
+ 
+ Step 3: git checkout docs
+ 
+ Step 4: git add .
+ 
+ Step 5: git commit -m "updated'
+ 
+Step 6: git push origin docs
+ 
+ Step 7: git switch master
+ 
+ Step8: git ls-files
+ 
+ Step 9: git merge docs
+ 
+ Step 10: git push origin master 
+ 
+ git branch -d docs  #delete branch from local
+
+ git push origin -d docs #delete from remote
+ 
+ git branch -m <old_name> <new_name> #rename branch
+ 
+ #conflicts
+ git init user1
+ 
+ git init user2
+ 
+ cd user1
+ git pull repourl
+ modify file
+ git add .
+ git commit -m <message>
+ 
+ cd user2
+ git pull repoutl
+ modify
+ commit
+ git push
+ sudo apt-get update
+ sudo apt install kdiff3
+ git config --global --add merge.tool kdiff3
+  git config --global --add mergetool.kdiff3.path /user/bin/kdiff3
+git config --global --add mergetool.trustExitCode false
+or
+git mergetool --tool=vimdiff3
+git mergetool
+select using
+You can either incorporate the changes by manually editing the MERGED split, or use Vim shortcuts pull from one of the LOCAL, BASE ad REMOTE versions.
+
+:diffg RE  # get from REMOTE
+:diffg BA  # get from BASE
+:diffg LO  # get from LOCAL
+or
+
+sudo apt install vim
+sudo nano ~/.gitconfig
+
+
+[user]
+        email = parameswaribala@gmail.com
+        name = eswaribala
+[merge]
+        tool = vim
+
+tool=vim
+
+or
+
+git config --global diff.tool p4merge
+git config --global difftool.p4merge.path "E:\software\A08\file\p4vinst64.exe"
+#to see global git configuration file
+git config --list --show-origin --show-scope
+
+download meld and install
+git config --global merge.tool "meld"
+git config --global mergetool.meld.path "C:\Program Files\Meld\Meld.exe"
+or
+git config --global --edit
+modify mergetool and difftool
+
+to save wq
+to abort qa!
+
+git mergetool
+
+select using
+You can either incorporate the changes by manually editing the MERGED split, or use Vim shortcuts pull from one of the LOCAL, BASE ad REMOTE versions.
+
+:diffg RE  # get from REMOTE
+:diffg BA  # get from BASE
+:diffg LO  # get from LOCAL
+
+select the required code
+
+git commit -m "conclusion message"
+git push origin master
+
+#rebase
+
+1. git clone  https://github.com/eswaribala/trainingsep2022repo.git (use your account)
+
+2. cd trainingsep2022repo
+
+3. create a.txt and b.txt in master branch and commit
+
+4. git branch feature
+6. git checkout feature
+7. git ls-files
+
+8. git switch master
+9. git branch
+10. create c.txt and commit in master
+11. git switch featue
+12. git branch
+13. Modify a.txt and b.txt and commit
+14. git switch master
+15. git log
+16. git switch feature
+17. git log
+18. git rebase master
+19. git switch master
+20 git merge feature
+
+#
