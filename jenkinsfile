@@ -1,0 +1,24 @@
+#!groovy
+pipeline{
+ agent any
+  tools {
+    maven 'maven'
+  }
+ stages{
+   stage("build"){
+       steps{
+          bat "mvn -f ./collectiondemo clean install -DskipTests"
+          }
+      }
+   stage("test"){
+          steps{
+             bat "mvn -f ./collectiondemo test"
+             }
+         }
+   stage("reports"){
+             steps{
+                bat "mvn -f ./collectiondemo surefire-report:report"
+                }
+            }
+  }
+ }
